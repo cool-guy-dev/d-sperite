@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- css imports -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- js imports -->
+  <script type="text/javascript" src="js/fill.js"></script>
+	<!-- title -->
+	<title>CANVAS_PIXEL_MECHANICS</title>
+
+</head>
+<body mouseenter="ev_mousemove();" mousemove="ev_mousemove()" scroll="fireLastMouseEvent()" onmouseup="mousedown=false">
+	<div id="mid">
+		<div id="tool">
+      <div class="tool_container">
+        <button onclick="tool = 1" type="button" class="tool_item">#</button>
+        <button onclick="tool = 2"type="button" class="tool_item">#</button>
+        <button onclick="tool = 3"type="button" class="tool_item">#</button>
+        <button onclick="tool = 4"type="button" class="tool_item">#</button>
+        <button onclick="tool = 5"type="button" class="tool_item">#</button>
+        <button onclick="tool = 6"type="button" class="tool_item">#</button>
+        <button onclick="tool = 7"type="button" class="tool_item">#</button>
+        <button onclick="tool = 8"type="button" class="tool_item">#</button>
+        <button onclick="tool = 9"type="button" class="tool_item">#</button>
+        <button onclick="tool = 10"type="button" class="tool_item">#</button>
+        <button onclick="tool = 11"type="button" class="tool_item">#</button>
+      </div>
+		</div>
+		<div id="canvas-base" onclick="floodFill()">
+      <div id="canvas-back">
+			     <canvas onscroll="floodFill(X, Y, '(22,30,14,1)')" onmousedown="draw_p;mousedown=true" onmouseup="mousedown=false" id="gameCanvas" width="320" height="320"></canvas>
+      </div>
+    </div>
+		<div id="prop">
+			<div id="prop1">
+        <div class="colorprop">
+          <span class="properties-text">Color Pallete:</span><br>
+          <input hidden id="colorselector_fg" type="color" onchange="pencolor=this.value;var fgcolor = this.value;setColorToColorSelectors('colorselectorbtn_fg')" name="colorselector">
+          <label id="colorselectorbtn_fg" for="colorselector_fg">---</label>
+          <input hidden id="colorselector_bg" type="color" onchange="pencolor=this.value;var bgcolor = this.value;setColorToColorSelectors('colorselectorbtn_bg')" name="colorselector">
+          <label id="colorselectorbtn_bg" for="colorselector_bg">---</label>
+          <label id="currentcolor">#333</label>
+          <button onclick="addToPallete(pencolor)">Save</button>
+        </div>
+        <div id="pallete_tabs">
+          <button onclick="current_pallete_tab = 1;changePalleteTab()" name="button">Basic</button>
+          <button onclick="current_pallete_tab = 2;changePalleteTab()" name="button">Skin</button>
+          <button onclick="current_pallete_tab = 3;changePalleteTab()" name="button">Nature</button>
+          <button onclick="current_pallete_tab = 4;changePalleteTab()" name="button">Legend</button>
+          <button onclick="current_pallete_tab = 5;changePalleteTab()" name="button">Custom</button>
+        </div>
+        <div id="pallete">
+
+        </div>
+			</div>
+			<div id="prop2">
+
+			</div>
+			<div id="prop3">
+
+			</div>
+		</div>
+	</div>
+	<div id="bot">
+
+		<div id="prtp"></div>
+		<div id="tmln"></div>
+	</div>
+<script type="text/javascript" src="js/color-pallete.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
